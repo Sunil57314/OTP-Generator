@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP generator</title>
+    <style>
+        .h1{
+            text-align: center;
+            font-size: 60px;
+        }
+        .h2{
+            margin-top: 50px;
+            margin-left: 20%;
+        }
+        #btn{
+            width: 200px;
+            height: 30px;
+            margin-left:20% ;
+        }
+        body{
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+<h1 class="h1"> OTP GENERATOR</h1>
+<h1 class="h2">YOUR ONE TIME PASSWORD IS: <span id="otp-display"></span> </h1>
+<button id="btn">Double click for otp</button>
+    <script>
+        let otp_display=document.getElementById("otp-display")
+        let button=document.getElementById("btn")
+        button.addEventListener("dblclick",function(){
+            let otp =Math.round(Math.random()*10000)
+            if(otp>999 && otp<9999)
+            {
+                otp_display.innerText=otp
+            }
+            else{
+                alert("there is technical issue please try again")
+            }
+
+        })
+
+    </script>
+</body>
+</html>
